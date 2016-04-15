@@ -6,24 +6,28 @@ import java.util.Collections;
 import java.util.List;
 
 
-/**
- * Classe de service permettant la gestion des login
+/**.
+ * Classe de service permettant la gestion des login.
  */
 public class LoginService {
 
+    /**
+     *
+     */
     private ArrayList<String> loginsExistants;
 
-    /**
-     * Construit un login service a partir de la liste des logins existants
+    /**.
+     * Construit un login service a partir de la liste des logins existants.
      * @param loginsExistants
      */
     public LoginService(String[] loginsExistants) {
-        this.loginsExistants = new ArrayList<String>(Arrays.asList(loginsExistants));
+        this.loginsExistants = new ArrayList<String>(Arrays.asList(
+                loginsExistants));
         Collections.sort(this.loginsExistants);
     }
 
-    /**
-     * Verifie si un login existe deja
+    /**.
+     * Verifie si un login existe deja.
      *
      * @param login le login a verifier
      * @return true si le login existe deja, false sinon
@@ -32,16 +36,16 @@ public class LoginService {
         return loginsExistants.contains(login);
     }
 
-    /**
-     * Ajoute un login a la liste des logins existants
+    /**.
+     * Ajoute un login a la liste des logins existants.
      * @param login le login a ajouter
      */
     public void addLogin(String login) {
         loginsExistants.add(login);
     }
 
-    /**
-     * Recherche tous les logins commençant par un meme prefixe
+    /**.
+     * Recherche tous les logins commençant par un meme prefixe.
      *
      * @param pref le prefixe
      * @return la liste des logins prefixes par <em>pref</em>
@@ -56,8 +60,8 @@ public class LoginService {
         return  loginsPrefixes;
     }
 
-    /**
-     * Recherche tous les logins
+    /**.
+     * Recherche tous les logins.
      *
      * @return la liste de tous les logins
      */
