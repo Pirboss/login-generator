@@ -32,5 +32,13 @@ public class LoginGeneratorTest {
         lg = new LoginGenerator(loginService);
         assertEquals("test paul dùrand", lg.generateLoginForNomAndPrenom("Dùrand", "Paul"), "PDUR");
 
+        loginService = new LoginService(new String[] {"JROL", "BPER", "CGUR", "JDUP", "JRAL", "JRAL1"});
+        lg = new LoginGenerator(loginService);
+        assertEquals("test paul du", lg.generateLoginForNomAndPrenom("Du", "Paul"), "PDU");
+
+        loginService = new LoginService(new String[] {"JROL", "BPER", "CGUR", "JDUP", "JRAL", "JRAL1"});
+        lg = new LoginGenerator(loginService);
+        assertEquals("test john ralling", lg.generateLoginForNomAndPrenom("Ralling", "John"), "JRAL2");
+
     }
 }
